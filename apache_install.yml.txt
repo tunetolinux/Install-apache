@@ -1,0 +1,14 @@
+- name: Install Apache Application server
+  hosts: appgroup
+  user: root
+  tasks:
+    - name: Ensure apache is installed
+      yum:
+        name: apache
+        state: present
+    - name: Ensure apache service is enabled and started
+      service:
+        name: apache
+        enabled: yes
+        state: started
+      
