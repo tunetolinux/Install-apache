@@ -1,0 +1,10 @@
+---
+- name: Configure httpd server
+  hosts: all
+  remote_user: ansible
+  become: true
+  tasks:
+    - name: Install httpd package
+      yum:
+        name: httpd
+        state: latest
