@@ -8,3 +8,13 @@
       yum:
         name: httpd
         state: latest
+    - name: Create content
+      copy:
+        content: "Welcome to tunetolinux.com"
+        dest: /var/www/html/index.html
+        force: yes
+    - name: Start and enable service
+      service:
+        name: httpd
+        state: started
+        enabled: true
